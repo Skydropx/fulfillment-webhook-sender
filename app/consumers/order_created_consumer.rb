@@ -2,8 +2,7 @@
 
 class OrderCreatedConsumer < ApplicationConsumer
   def consume(message)
-    #puts "Received message: #{message.key}, #{message.value}"
-    process_default
+    process_default(message)
   end
 end
 
