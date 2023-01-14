@@ -7,6 +7,7 @@ gem 'bootsnap', require: false
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
+gem 'rails_admin', '~> 3.0'
 gem 'ruby-kafka'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -21,3 +22,4 @@ end
 group :development do
   gem 'annotate'
 end
+gem "sassc-rails"
