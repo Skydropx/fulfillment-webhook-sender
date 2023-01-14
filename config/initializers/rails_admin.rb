@@ -1,28 +1,14 @@
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
-  ### Popular gems integration
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Login required') do |username, password|
+      auth_user_name = ENV['ADMIN_USERNAME']
+      auth_user_pass = ENV['ADMIN_PASSWORD']
+      username == auth_user_name && password == auth_user_pass
+    end
+  end
 
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
-
-  ## == CancanCan ==
-  # config.authorize_with :cancancan
-
-  ## == Pundit ==
-  # config.authorize_with :pundit
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/railsadminteam/rails_admin/wiki/Base-configuration
-
-  ## == Gravatar integration ==
-  ## To disable Gravatar integration in Navigation Bar set to false
-  # config.show_gravatar = true
 
   config.actions do
     dashboard                     # mandatory
