@@ -20,6 +20,15 @@ Remotely, the project is set to support Heroku Kafka. If you have your cluster i
 
 #### Producing messages
 
-You can use Karafka to easily send a message as follows:
+You can easily send a message as follows:
+
 ``
-Karafka.producer.produce_async(topic: "#{ENV['KAFKA_PREFIX']}topic_name", payload: { 'ping' => 'pong' }.to_json)
+kafka = Kafka.new('localhost:9092')
+kafka.deliver_message("Hello, world!", topic: "#{ENV['KAFKA_PREFIX']}topic_name")
+``
+
+Also, you are able to debug messages trough console using:
+
+`KafkaConfig.test_consumer 'topic_name'`
+
+This will subscribe your console session to a logger and the messages that you send to `topic_name` will be shown live.
