@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-class OrderCreatedConsumer 
+class OrderCreatedConsumer < ApplicationConsumer
   def consume(message)
-    puts "Received message: #{message.key}, #{message.value}"
+    #puts "Received message: #{message.key}, #{message.value}"
+    process_default
   end
 end
 
