@@ -9,7 +9,7 @@ else
 end
 
 # 2. Register to the topics you want to consume (without the prefix)
-TOPICS = ['order.created'].freeze
+TOPICS = KafkaConfig.topics
 # 3. Create a consumer class for each topic
 # Path: app/consumers/{{topic}}_consumer.rb
 

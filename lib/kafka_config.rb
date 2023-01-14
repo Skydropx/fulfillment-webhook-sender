@@ -3,6 +3,11 @@
 class KafkaConfig
   # 1. Set the group id to the name of your app
   GROUP_ID = 'webhook-sender'
+  TOPICS = %w[order_created].freeze
+
+  def self.topics
+    TOPICS
+  end
 
   def self.prefix
     "#{ENV.fetch('KAFKA_PREFIX', '')}"
