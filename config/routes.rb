@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: lambda { |_env|
+    response = '<h2>Webhooks sender service.</h2>'
+    [200, { 'Content-Type' => 'text/html' }, [response]]
+  }
 end
