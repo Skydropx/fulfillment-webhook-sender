@@ -23,7 +23,7 @@ Thread.new do
   begin
     $consumer.each_message do |message|
       # Remember the last 10 events
-      $recent_messages << [message, {received_at: Time.now.iso8601}]
+      $recent_messages << [message, { received_at: Time.now.iso8601 }]
       $recent_messages.shift if $recent_messages.length > 10
 
       # puts "Topic: #{message.topic}, Partition: #{message.partition}, Offset: #{message.offset}, Key: #{message.key}, Value: #{message.value}"
@@ -41,6 +41,6 @@ Thread.new do
   rescue Exception => e
     puts 'CONSUMER ERROR'
     puts "#{e}\n#{e.backtrace.join("\n")}"
-    #exit(1)
+    # exit(1)
   end
 end
