@@ -5,9 +5,9 @@
 #  id               :bigint           not null, primary key
 #  external_user_id :string
 #  payload          :json
-#  topic            :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  topic            :integer
 #
 require 'rails_helper'
 
