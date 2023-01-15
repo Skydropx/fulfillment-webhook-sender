@@ -5,11 +5,11 @@ class OrderCreatedMapper
 
   def map
     {
-      order_id: event[:id],
-      user_id: event[:account_id],
-      created_at: event[:created_at],
-      products: event[:products],
-      status: event[:status]
+      order_id: event['id'],
+      user_id: event['account_id'],
+      created_at: event['created_at'],
+      products: event['products'],
+      status: event['status']
     }
   end
 

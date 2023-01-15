@@ -17,4 +17,7 @@ class Message < ApplicationRecord
   belongs_to :webhook
 
   enum status: { pending: 0, sent: 1, failed: 2 }
+
+  # The combination of event_id and webhook_id should be unique.
+  validates :event_id, uniqueness: { scope: :webhook_id }
 end

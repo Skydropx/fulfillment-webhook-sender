@@ -6,7 +6,7 @@ class ApplicationConsumer
     process(message)
     mapped_data = "#{topic}_mapper".classify.constantize.new(value).map
     # Store Event
-    Event.create(
+    Event.create!(
       topic:,
       external_user_id: mapped_data[:user_id],
       payload: mapped_data.except(:user_id)
