@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Initialize consumers
 
 require 'kafka_config'
@@ -31,7 +33,7 @@ Thread.new do
       topic = message.topic.gsub(KafkaConfig.prefix, '')
 
       # Find the consumer for the topic
-      consumer = topic + '_consumer'
+      consumer = "#{topic}_consumer"
       consumer = consumer.camelize.constantize
 
       # Process the message

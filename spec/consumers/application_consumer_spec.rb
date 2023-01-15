@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require './spec/doubles/kafka_message_double'
 require './spec/doubles/topic_mapper'

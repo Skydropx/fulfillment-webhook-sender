@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WebhookSenderJob < ApplicationJob
   def perform(message_id)
     message = Message.find(message_id)

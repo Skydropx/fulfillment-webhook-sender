@@ -10,7 +10,7 @@ class KafkaConfig
   end
 
   def self.prefix
-    "#{ENV.fetch('KAFKA_PREFIX', '')}"
+    ENV.fetch('KAFKA_PREFIX', '').to_s
   end
 
   def self.with_prefix(name)

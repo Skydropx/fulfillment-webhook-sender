@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TopicMapper
   def initialize(message)
     @message = message
@@ -13,6 +15,6 @@ end
 
 class KafkaConfig
   def self.topics
-    ['topic', 'order_created']
+    %w[topic order_created]
   end
 end

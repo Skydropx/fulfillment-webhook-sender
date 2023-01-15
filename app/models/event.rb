@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: events
@@ -23,9 +25,8 @@ class Event < ApplicationRecord
   after_create :create_messages
 
   def create_messages
-    Webhook.where(topic: topic, external_user_id: external_user_id).each do |webhook|
-      Message.create!(event_id: self.id, webhook_id: webhook.id, attempts: 0)
+    Webhook.where(topic:, external_user_id:).each do |webhook|
+      Message.create!(event_id: id, webhook_id: webhook.id, attempts: 0)
     end
   end
-
 end

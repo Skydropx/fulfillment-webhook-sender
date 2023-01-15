@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: messages
@@ -44,8 +46,8 @@ RSpec.describe Message, type: :model do
 
   describe 'callbacks' do
     describe 'after_create' do
-    let(:webhook) { Webhook.create(topic: :order_created, external_user_id: '123') }
-    let(:event) { Event.create(topic: :order_created, external_user_id: '123') }
+      let(:webhook) { Webhook.create(topic: :order_created, external_user_id: '123') }
+      let(:event) { Event.create(topic: :order_created, external_user_id: '123') }
       it 'enqueues WebhookSenderJob' do
         expect { Message.create(event_id: event.id, webhook_id: webhook.id) }.to have_enqueued_job(WebhookSenderJob)
       end
