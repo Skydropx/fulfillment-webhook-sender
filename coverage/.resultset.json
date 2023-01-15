@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/consumers/application_consumer_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -22,6 +24,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/rails_helper.rb": {
         "lines": [
+          null,
+          null,
           null,
           1,
           1,
@@ -90,6 +94,8 @@
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -98,6 +104,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -134,6 +142,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -142,6 +152,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -206,6 +218,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/initializers/basic_consumer.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           1,
@@ -371,11 +385,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/initializers/filter_parameter_logging.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -403,11 +420,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/initializers/rails_admin.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -439,6 +459,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/config/routes.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -480,6 +502,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/doubles/topic_mapper.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           2,
@@ -533,6 +557,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/consumers/order_created_consumer_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -562,6 +588,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/jobs/webhook_sender_job_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -577,6 +605,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/app/jobs/webhook_sender_job.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           0,
@@ -589,6 +619,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -600,6 +632,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/models/event_spec.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -667,6 +701,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           3,
@@ -682,12 +718,13 @@
           1,
           null,
           null,
-          null,
           null
         ]
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -695,6 +732,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/models/message_spec.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -767,6 +806,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           1,
           1,
@@ -787,6 +828,8 @@
       },
       "/Users/juanmamaffei/apps/ms_webhook_sender/spec/models/webhook_spec.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -833,6 +876,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           3,
@@ -855,6 +900,8 @@
           null,
           null,
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -875,8 +922,8 @@
           null,
           null,
           null,
-          null,
           1,
+          null,
           null,
           null,
           null,
@@ -907,6 +954,6 @@
         ]
       }
     },
-    "timestamp": 1673755987
+    "timestamp": 1673756109
   }
 }
