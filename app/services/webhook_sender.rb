@@ -10,11 +10,11 @@ class WebhookSender
     @event = event
   end
 
-  def send
+  def call 
     if post_request
-      message.update_attributes(delivery_status: 'sent', attempts: message.attempts + 1)
+      message.update!(delivery_status: 'sent', attempts: message.attempts + 1)
     else
-      message.update_attributes(delivery_status: 'failed', attempts: message.attempts + 1)
+      message.update!(delivery_status: 'failed', attempts: message.attempts + 1)
     end
   end
 
@@ -23,13 +23,13 @@ class WebhookSender
   attr_reader :webhook, :message, :event
 
   def post_request
-    HTTParty.post(@webhook.url, body: body, headers: headers)
+    HTTParty.post(webhook.url_path, body: body, headers: headers)
   end
 
   def body
     {
       topic: event.topic,
-      payload: message.payload
+      payload: event.payload
     }.to_json
   end
 

@@ -20,4 +20,11 @@ class Message < ApplicationRecord
 
   # The combination of event_id and webhook_id should be unique.
   validates :event_id, uniqueness: { scope: :webhook_id }
+
+  # After a message is created, is necessary to send it to the webhook sender job.
+  after_create :send_message
+
+  def send_message
+    WebhookSenderJob.perform_later(self.id)
+  end
 end
