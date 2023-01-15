@@ -9,13 +9,12 @@ else
 end
 
 # 2. Register to the topics you want to consume (without the prefix)
-TOPICS = KafkaConfig.topics
 # 3. Create a consumer class for each topic
 # Path: app/consumers/{{topic}}_consumer.rb
 
 Thread.new do
   # Subscribe to the topics
-  TOPICS.each do |topic|
+  KafkaConfig.topics.each do |topic|
     $consumer.subscribe(KafkaConfig.with_prefix(topic))
   end
 
@@ -36,11 +35,14 @@ Thread.new do
       consumer = consumer.camelize.constantize
 
       # Process the message
+      # Debug with puts "#{consumer}.new.consume(#{message.inspect})"
       consumer.new.consume(message)
     end
   rescue Exception => e
     puts 'CONSUMER ERROR'
-    puts "#{e}\n#{e.backtrace.join("\n")}"
+    # puts "#{e}\n#{e.backtrace.join("\n")}"
+    # puts e.backtrace.inspect
     # exit(1)
+    retry
   end
 end
