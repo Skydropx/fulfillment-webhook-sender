@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: webhooks
@@ -21,7 +23,7 @@ RSpec.describe Webhook, type: :model do
   describe 'enum topic' do
     context 'when topic is not valid' do
       it 'is not valid' do
-        expect{described_class.new(topic: 'invalid')}.to raise_error(ArgumentError)
+        expect { described_class.new(topic: 'invalid') }.to raise_error(ArgumentError)
       end
     end
   end
