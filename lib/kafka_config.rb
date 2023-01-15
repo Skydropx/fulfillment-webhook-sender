@@ -59,6 +59,8 @@ class KafkaConfig
     )
     $consumer = consumer_kafka.consumer(group_id: with_prefix(GROUP_ID))
     $recent_messages = []
+  rescue OpenSSL::X509::CertificateError => e
+    {}
   end
 
   def self.test_consumer(topic)
