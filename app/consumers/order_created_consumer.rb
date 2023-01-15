@@ -5,4 +5,3 @@ class OrderCreatedConsumer < ApplicationConsumer
     process_default(message)
   end
 end
-

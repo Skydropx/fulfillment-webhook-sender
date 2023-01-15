@@ -22,4 +22,4 @@ end
 group :development do
   gem 'annotate'
 end
-gem "sassc-rails"
+gem 'sassc-rails'

@@ -31,12 +31,12 @@ class KafkaConfig
     return {} unless kafka_variables_present?
 
     {
-    'security.protocol': 'ssl',
-    'bootstrap.servers': ENV['KAFKA_URL'].gsub('kafka+ssl://', ''),
-    'ssl.certificate.pem': ENV['KAFKA_CLIENT_CERT'],
-    'ssl.key.pem': ENV['KAFKA_CLIENT_CERT_KEY'],
-    'ssl.ca.pem': ENV['KAFKA_TRUSTED_CERT'],
-    'group.id': "#{ENV['KAFKA_PREFIX']}#{GROUP_ID}"
+      'security.protocol': 'ssl',
+      'bootstrap.servers': ENV['KAFKA_URL'].gsub('kafka+ssl://', ''),
+      'ssl.certificate.pem': ENV['KAFKA_CLIENT_CERT'],
+      'ssl.key.pem': ENV['KAFKA_CLIENT_CERT_KEY'],
+      'ssl.ca.pem': ENV['KAFKA_TRUSTED_CERT'],
+      'group.id': "#{ENV['KAFKA_PREFIX']}#{GROUP_ID}"
     }
   end
 
@@ -55,7 +55,7 @@ class KafkaConfig
       ssl_ca_cert: ENV.fetch('KAFKA_TRUSTED_CERT', ''),
       ssl_client_cert: ENV.fetch('KAFKA_CLIENT_CERT', ''),
       ssl_client_cert_key: ENV.fetch('KAFKA_CLIENT_CERT_KEY', ''),
-      ssl_verify_hostname: false,
+      ssl_verify_hostname: false
     )
     $consumer = consumer_kafka.consumer(group_id: with_prefix(GROUP_ID))
     $recent_messages = []
@@ -64,22 +64,21 @@ class KafkaConfig
   def self.test_consumer(topic)
     KafkaConfig.basic_consumer_local_config
     Thread.new do
-        $consumer.subscribe(KafkaConfig.with_prefix(topic))
+      $consumer.subscribe(KafkaConfig.with_prefix(topic))
 
       # Consume messages from the topics
       begin
         $consumer.each_message do |message|
           # Remember the last 10 events
-          $recent_messages << [message, {received_at: Time.now.iso8601}]
+          $recent_messages << [message, { received_at: Time.now.iso8601 }]
           $recent_messages.shift if $recent_messages.length > 10
 
           puts "Topic: #{message.topic}, Partition: #{message.partition}, Offset: #{message.offset}, Key: #{message.key}, Value: #{message.value}"
-
         end
       rescue Exception => e
         puts 'CONSUMER ERROR'
         puts "#{e}\n#{e.backtrace.join("\n")}"
-        #exit(1)
+        # exit(1)
       end
     end
   end
