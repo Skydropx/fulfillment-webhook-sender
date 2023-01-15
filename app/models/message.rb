@@ -16,8 +16,15 @@ class Message < ApplicationRecord
   belongs_to :event
   belongs_to :webhook
 
-  enum status: { pending: 0, sent: 1, failed: 2 }
+  enum delivery_status: { pending: 0, sent: 1, failed: 2 }
 
   # The combination of event_id and webhook_id should be unique.
   validates :event_id, uniqueness: { scope: :webhook_id }
+
+  # After a message is created, is necessary to send it to the webhook sender job.
+  after_create :send_message
+
+  def send_message
+    WebhookSenderJob.perform_later(self.id)
+  end
 end
