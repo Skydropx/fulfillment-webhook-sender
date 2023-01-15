@@ -9,7 +9,6 @@ RailsAdmin.config do |config|
     end
   end
 
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
