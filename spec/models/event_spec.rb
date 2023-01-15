@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: events
@@ -36,7 +38,7 @@ RSpec.describe Event, type: :model do
       end
     end
   end
-  
+
   describe 'callbacks' do
     describe 'after_create' do
       it 'calls #create_message' do

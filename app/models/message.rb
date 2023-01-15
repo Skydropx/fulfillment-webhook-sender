@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: messages
@@ -25,6 +27,6 @@ class Message < ApplicationRecord
   after_create :send_message
 
   def send_message
-    WebhookSenderJob.perform_later(self.id)
+    WebhookSenderJob.perform_later(id)
   end
 end

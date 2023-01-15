@@ -10,7 +10,7 @@ class WebhookSender
     @event = event
   end
 
-  def call 
+  def call
     if post_request
       message.update!(delivery_status: 'sent', attempts: message.attempts + 1)
     else
@@ -23,7 +23,7 @@ class WebhookSender
   attr_reader :webhook, :message, :event
 
   def post_request
-    HTTParty.post(webhook.url_path, body: body, headers: headers)
+    HTTParty.post(webhook.url_path, body:, headers:)
   end
 
   def body
