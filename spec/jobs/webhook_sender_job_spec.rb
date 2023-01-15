@@ -9,5 +9,11 @@ RSpec.describe WebhookSenderJob, type: :job do
     it 'enqueues a job' do
       expect { WebhookSenderJob.perform_later }.to have_enqueued_job
     end
+
+    context 'with a valid param (event)' do
+      it 'updates the message' do
+        expect(WebhookSenderJob.perform_now(Message.first.id)).to eq(true) 
+      end
+    end
   end
 end
