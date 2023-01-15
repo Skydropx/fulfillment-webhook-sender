@@ -32,12 +32,12 @@ events.each { |event| Event.create(event) }
 
 webhooks = [{
   'url_path' => 'https://reqbin.com/echo?t=11122',
-  'external_used_id' => '11',
+  'external_user_id' => '11',
   'topic' => 'order_created'
 },
             {
               'url_path' => 'https://reqbin.com/echo?t=11222',
-              'external_used_id' => '12',
+              'external_user_id' => '12',
               'topic' => 'order_created'
             }]
 
@@ -50,14 +50,12 @@ messages = [{
   'webhook_id' => Webhook.first.id,
   'attempts' => 1,
   'delivery_status' => 1,
-  'status' => nil
 },
             {
               'event_id' => Event.last.id,
               'webhook_id' => Webhook.first.id,
               'attempts' => 3,
               'delivery_status' => 2,
-              'status' => nil
             }]
 
 messages.each { |message| Message.create(message) }
