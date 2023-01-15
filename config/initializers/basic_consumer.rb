@@ -2,10 +2,10 @@
 
 require 'kafka_config'
 
-if Rails.env.development?
-  KafkaConfig.basic_consumer_local_config
-else
+if Rails.env.production?
   KafkaConfig.basic_consumer_production_config
+else
+  KafkaConfig.basic_consumer_local_config
 end
 
 # 2. Register to the topics you want to consume (without the prefix)
